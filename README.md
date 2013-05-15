@@ -28,5 +28,43 @@ libb: hello from libb
 
 Here is an example of such a ``hbuild`` file:
 
-![hbuild](https://github.com/mana-fwk/ywaf-tests/raw/master/hbuild)
+```yaml
+## -*- yaml -*-
+
+package: {
+  name: "my-package",
+  authors: ["my", "myself", "irene"],
+}
+
+options: {
+  tools: ["compiler_cxx", "python"],
+}
+
+configure: {
+  tools: ["compiler_cxx", "python"],
+}
+
+build: {
+  my-app: {
+    features: "cxx cxxprogram",
+    source: "src/app/src/app.cxx",
+    use: ["liba", "libb"],
+  },
+
+  liba: {
+    features: "cxx cxxshlib",
+    source: "src/liba/src/liba.cxx",
+    includes: "src/liba/include",
+    export_includes: "src/liba/include",
+  },
+
+  libb: {
+    features: "cxx cxxshlib",
+    source: "src/libb/src/libb.cxx",
+    includes: "src/libb/include",
+    export_includes: "src/libb/include",
+  },
+}
+## EOF ##
+```
 
