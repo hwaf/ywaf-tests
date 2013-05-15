@@ -3,6 +3,22 @@
 package: {
   name: "my-package",
   authors: ["my", "myself", "irene"],
+
+  deps: {
+    public: [
+     "Control/AthenaCommon",
+     "Control/AthenaKernel",
+    ],
+
+    private: [
+     "Control/AthenaBaseComps",
+    ],
+
+    runtime: [
+     "External/AtlasPyFwdBwdPorts", # for py-yaml
+     "Tools/PyUtils",               # for setup-workarea
+    ],
+  },
 }
 
 options: {
@@ -11,23 +27,37 @@ options: {
 
 configure: {
   tools: ["compiler_cxx", "python"],
+  env: {
+    MY_VAR: "/some/path",
+    PATH: "${MY_VAR}/bin:${PATH}",
+    # or special syntax ?
+    # _@_append_PATH: "${MY_VAR}/bin",
+  },
+
+  # -- escape hatch --
+  # entry point to load personal waf-rules and functions
+  # this is the equivalent of CMT's fragments, docs and patterns
+  export_tools: {
+    build_reflex_dict: "some/file.py",
+    build_rootcint_dict: "some/other/file.py",
+  },
 }
 
 build: {
   my-app: {
     features: "cxx cxxprogram",
     source: "src/app/src/app.cxx",
-    use: ["liba", "libb"],
+    use: ["aa", "bb"],
   },
 
-  liba: {
+  aa: {
     features: "cxx cxxshlib",
     source: "src/liba/src/liba.cxx",
     includes: "src/liba/include",
     export_includes: "src/liba/include",
   },
 
-  libb: {
+  bb: {
     features: "cxx cxxshlib",
     source: "src/libb/src/libb.cxx",
     includes: "src/libb/include",
