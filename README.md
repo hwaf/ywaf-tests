@@ -48,17 +48,17 @@ build: {
   my-app: {
     features: "cxx cxxprogram",
     source: "src/app/src/app.cxx",
-    use: ["liba", "libb"],
+    use: ["aa", "bb"],
   },
 
-  liba: {
+  aa: {
     features: "cxx cxxshlib",
     source: "src/liba/src/liba.cxx",
     includes: "src/liba/include",
     export_includes: "src/liba/include",
   },
 
-  libb: {
+  bb: {
     features: "cxx cxxshlib",
     source: "src/libb/src/libb.cxx",
     includes: "src/libb/include",
