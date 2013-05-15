@@ -23,3 +23,10 @@ liba: hello from liba
 libb: hello from libb
 
 ```
+
+## YAML-based syntax
+
+Here is an example of such a ``hbuild`` file:
+
+![hbuild](https://github.com/mana-fwk/ywaf-tests/raw/master/hbuild)
+
