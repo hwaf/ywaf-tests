@@ -31,7 +31,8 @@ configure: {
     MY_VAR: "/some/path",
     PATH: "${MY_VAR}/bin:${PATH}",
     # or special syntax ?
-    # _@_append_PATH: "${MY_VAR}/bin",
+    # _@_append_PATH:  "${MY_VAR}/bin",
+    # PATH_@_append:  "${MY_VAR}/bin",
   },
 
   # -- escape hatch --
