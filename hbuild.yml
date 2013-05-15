@@ -37,11 +37,11 @@ package: {
 }
 
 options: {
-  tools: ["compiler_cxx", "python"],
+  tools: ["compiler_c", "compiler_cxx", "python"],
 }
 
 configure: {
-  tools: ["compiler_cxx", "python"],
+  tools: ["compiler_c", "compiler_cxx", "python"],
   env: {
     MY_VAR: "/some/path",
     PATH: "${MY_VAR}/bin:${PATH}",
@@ -77,6 +77,7 @@ build: {
     source: "src/liba/src/liba.cxx",
     includes: "src/liba/include",
     export_includes: "src/liba/include",
+    install_path: "${PREFIX}/lib",
   },
 
   bb: {
