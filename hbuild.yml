@@ -63,6 +63,11 @@ configure: {
     build_reflex_dict: "some/file.py",
     build_rootcint_dict: "some/other/file.py",
   },
+
+  hwaf-call: [
+    "my-script.py",
+    "waftools/my-other-script.py",
+  ],
 }
 
 build: {
@@ -86,5 +91,9 @@ build: {
     includes: "src/libb/include",
     export_includes: "src/libb/include",
   },
+  hwaf-call: [
+    "my-script.py",
+    "waftools/my-other-script.py",
+  ],
 }
 ## EOF ##
