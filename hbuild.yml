@@ -13,7 +13,7 @@
 # }
 
 package: {
-  name: "my-package",
+  name: "control/my-package",
   authors: ["my", "myself", "irene"],
 
   deps: {
@@ -64,8 +64,12 @@ configure: {
     build_rootcint_dict: "some/other/file.py",
   },
 
+  # escape hatch: 
+  #  this will load the python module and,
+  #  execute the function 'configure'
   hwaf-call: [
     "my-script.py",
+    "waftools/my-script.py",
     "waftools/my-other-script.py",
   ],
 }
@@ -91,8 +95,13 @@ build: {
     includes: "src/libb/include",
     export_includes: "src/libb/include",
   },
+
+  # escape hatch: 
+  #  this will load the python module and,
+  #  execute the function 'build'
   hwaf-call: [
     "my-script.py",
+    "waftools/my-script.py",
     "waftools/my-other-script.py",
   ],
 }
