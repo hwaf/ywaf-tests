@@ -1,0 +1,33 @@
+## -*- yaml -*-
+
+package: {
+  name: "control/pkg-a",
+  authors: ["my", "myself", "irene"],
+}
+
+options: {
+  tools: ["compiler_cxx"],
+}
+
+configure: {
+  tools: ["compiler_cxx"],
+  env: {
+    MY_VAR: "/some/path",
+    PATH: "${MY_VAR}/bin:${PATH}",
+    # or special syntax ?
+    # _@_append_PATH:  "${MY_VAR}/bin",
+    # PATH_@_append:  "${MY_VAR}/bin",
+  },
+}
+
+build: {
+
+  aa: {
+    features: "cxx cxxshlib",
+    source: "src/liba.cxx",
+    includes: "include",
+    export_includes: "include",
+  },
+
+}
+## EOF ##
