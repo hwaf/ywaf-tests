@@ -1,4 +1,4 @@
-#include "libb/libb.h"
+#include "pkg-b/libb.h"
 
 namespace libb {
   std::string print() {

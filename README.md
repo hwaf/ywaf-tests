@@ -28,6 +28,6 @@ libb: hello from libb
 
 Here is an example of such a ``hbuild`` file:
 
- https://github.com/mana-fwk/ywaf-tests/blob/master/hbuild.yml
+ https://github.com/mana-fwk/ywaf-tests/blob/master/app/hbuild.yml
  
  

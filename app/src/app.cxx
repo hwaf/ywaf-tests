@@ -1,5 +1,5 @@
-#include "liba/liba.h"
-#include "libb/libb.h"
+#include "pkg-a/liba.h"
+#include "pkg-b/libb.h"
 
 #include <iostream>
 
