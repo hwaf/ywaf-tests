@@ -1,0 +1,14 @@
+
+def pkg_deps(ctx):
+    return
+
+def options(ctx):
+    print("+++++++++>>>> hello from %r" % ctx.fun)
+    ctx.load('find_root')
+
+def configure(ctx):
+    print("+++++++++++++++++ %r" % ctx.path.abspath())
+    return
+
+def build(ctx):
+    return

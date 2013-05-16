@@ -38,6 +38,15 @@ package: {
 
 options: {
   tools: ["compiler_c", "compiler_cxx", "python"],
+
+  # escape hatch: 
+  #  this will load the python module and,
+  #  execute the function 'build'
+  hwaf-call: [
+    "my-script.py",
+    "waftools/my-script.py",
+    "waftools/my-other-script.py",
+  ],
 }
 
 configure: {
