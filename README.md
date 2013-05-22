@@ -59,7 +59,7 @@ build: {
     use: ["AthenaBaseComps", "StoreGateLib", "EventInfo"],
     # or, possibly:
     # use: ["@{auto-imports-from-pkg-uses}"],
-    # or, possible:
+    # or, possibly:
     # use: [], # implicitly imports from pkg uses...
   }
 }
