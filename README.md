@@ -30,7 +30,41 @@ Here is an example of such a ``hscript`` file:
 
  https://github.com/mana-fwk/ywaf-tests/blob/master/app/hscript.yml
  
- 
+
+A typical ``Athena`` ``component-library`` package would look like:
+
+```yaml
+## -*- yaml -*-
+package: {
+  name: "Control/AthenaServices",
+  authors: [ 
+    "me <me@cern.ch>", 
+    "you <you@cern.ch>",
+  ],
+  
+  deps: {
+    public: [
+     "Control/AthenaBaseComps",
+     "Control/StoreGate",
+     
+     "Event/EventInfo",
+    ],
+  },
+}
+
+build: {
+  AthenaServices: {
+    features: "athena_component_library",
+    source: ["src/*.cxx"],
+    use: ["AthenaBaseComps", "StoreGateLib", "EventInfo"],
+    # or, possibly:
+    # use: ["@{auto-imports-from-pkg-uses}"],
+    # or, possible:
+    # use: [], # implicitly imports from pkg uses...
+  }
+}
+```
+
 Here is the complete syntax:
 
 ```yaml
@@ -76,8 +110,8 @@ options: {
   tools: ["compiler_c", "compiler_cxx", "python"],
 
   # escape hatch: 
-  #  this will load the python module and,
-  #  execute the function 'build'
+  #  this will load the python module and
+  #  execute the function 'options'
   hwaf-call: [
     "my-script.py",
     "waftools/my-script.py",
@@ -126,7 +160,7 @@ configure: {
 
   # escape hatch: 
   #  this will load the python module and,
-  #  execute the function 'build'
+  #  execute the function 'configure'
   hwaf-call: [
     "my-script.py",
     "waftools/my-script.py",
