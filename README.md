@@ -99,9 +99,16 @@ configure: {
       x86_64:  "some-value-for-64b",
     },
     my_other_macro: "some-value",
+    
+    ## tentative syntax... 
+    ## what should be the (proper) algorithm to pattern-match ?
+    CXXFLAGS: {
+      unix&i686: ["-m32",],
+      unix&x86_64: ["-m64",],
+    },
   },
   # list of tags to activate
-  tag: [i686, x86_64,],
+  tag: [i686, x86_64, enable_graphics],
 
   # -- escape hatch --
   # entry point to load personal waf-rules and functions
