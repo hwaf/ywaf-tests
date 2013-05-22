@@ -1,0 +1,28 @@
+## -*- yaml -*-
+
+package: {
+  name: "control/pkg-d",
+  authors: ["my", "myself", "irene"],
+
+  deps: {
+    public: [
+      "control/pkg-a",
+      "control/pkg-b",
+      "control/pkg-c",
+    ],
+  },
+}
+
+configure: {
+}
+
+build: {
+
+  mycomplib: {
+    features: "cxx cxxshlib",
+    source: "src/libd.cxx",
+    use: ["aa", "bb", "mylinklib"],
+  },
+
+}
+## EOF ##

@@ -1,0 +1,28 @@
+## -*- yaml -*-
+
+package: {
+  name: "control/pkg-c",
+  authors: ["my", "myself", "irene"],
+
+  deps: {
+    public: [
+      "control/pkg-a",
+    ],
+  },
+}
+
+configure: {
+}
+
+build: {
+
+  mylinklib: {
+    features: "cxx cxxshlib",
+    source: "src/libc.cxx",
+    includes: "include",        # this would be inferred, eventually
+    export_includes: "include", # ditto.
+    use: ["aa"],
+  },
+
+}
+## EOF ##
