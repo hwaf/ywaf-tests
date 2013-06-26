@@ -10,7 +10,7 @@ describe builds.
 $ hwaf init work
 $ cd work
 $ hwaf setup
-$ hwaf pkg co git://github.com/mana-fwk/ywaf-tests tests
+$ hwaf pkg co git://github.com/hwaf/ywaf-tests tests
 $ hwaf setup -cmtpkgdir=src/tests
 $ hwaf configure
 hello from my [/tmp/work/src/tests/app/my-script.py] options
@@ -92,7 +92,7 @@ libb: hello from libb
 
 Here is an example of such a ``hscript`` file:
 
- https://github.com/mana-fwk/ywaf-tests/blob/master/app/hscript.yml
+ https://github.com/hwaf/ywaf-tests/blob/master/app/hscript.yml
  
 
 A typical ``Athena`` ``component-library`` package would look like:
