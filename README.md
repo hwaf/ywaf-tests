@@ -206,7 +206,7 @@ configure: {
     },
   },
   # list of tags to activate
-  tag: [i686, x86_64, enable_graphics],
+  tags: [i686, x86_64, enable_graphics],
 
   # -- escape hatch --
   # entry point to load personal waf-rules and functions
