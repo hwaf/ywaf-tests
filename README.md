@@ -205,9 +205,16 @@ configure: {
       unix&x86_64: ["-m64",],
     },
   },
-  # list of tags to activate
-  tags: [i686, x86_64, enable_graphics],
 
+  # list of tags definitions
+  declare-tags: [
+      {x86_64-linux-gcc-opt: [x86_64, linux, 64b, gcc, opt]},
+      {x86_64: [64b]},
+  ],
+
+  # list of tags to activate
+  apply-tags: [x86_64-linux-gcc-opt],
+
   # -- escape hatch --
   # entry point to load personal waf-rules and functions
   # this is the equivalent of CMT's fragments, docs and patterns
