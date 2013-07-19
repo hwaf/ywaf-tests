@@ -215,21 +215,7 @@ configure: {
   # list of tags to activate
   apply-tags: [x86_64-linux-gcc-opt],
 
-  # -- escape hatch --
-  # entry point to load personal waf-rules and functions
-  # this is the equivalent of CMT's fragments, docs and patterns
-  #
-  # what the key of this dict is meant to represent isn't clear yet:
-  #  - should this be the name of a waf-function ? (but attached to what Context?)
-  #  - or the name of the (synthesized) python module under which the content
-  #    of the imported file would be published ?
-  #  - or require that it is just the name for a loadable waf-feature ?
-  export_tools: {
-    build_reflex_dict: "some/file.py",
-    build_rootcint_dict: "some/other/file.py",
-  },
-
-  # escape hatch: 
+  # escape hatch:
   #  this will load the python module and,
   #  execute the function 'configure'
   hwaf-call: [
