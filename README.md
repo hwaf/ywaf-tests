@@ -151,7 +151,10 @@ Here is the complete syntax:
 package: {
   name: "control/pkg-app",
   authors: ["my", "myself", "irene"],
-
+  managers: ["higher beeing"],
+  version: "pkg-app-00-00-01",
+  
+  ## dependencies of this package
   deps: {
     public: [
      "control/pkg-a",
@@ -188,11 +191,9 @@ options: {
 configure: {
   tools: ["compiler_c", "compiler_cxx", "python"],
   env: {
-    MY_VAR: "/some/path",
-    PATH: "${MY_VAR}/bin:${PATH}",
-    # or special syntax ?
-    # _@_append_PATH:  "${MY_VAR}/bin",
-    # PATH_@_append:  "${MY_VAR}/bin",
+    MY_VAR: "/some/path",           # path declare
+    PATH: "${MY_VAR}/bin:${PATH}",  # path prepend
+    MATH: "${MATH}:${MY_VAR}/bin",  # path append
     my_macro: {
       default: "some-default-value",
       i686:    "some-value-for-32b",
