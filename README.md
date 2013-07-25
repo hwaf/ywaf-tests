@@ -129,7 +129,7 @@ build: {
 }
 ```
 
-## hscript.yml specss
+## hscript.yml specs
 
 Here is the complete syntax:
 
