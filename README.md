@@ -208,6 +208,12 @@ configure: {
       unix&x86_64: ["-m64",],
     },
   },
+  
+  # declare runtime aliases
+  alias: {
+    ll: "ls -l",
+    athena: "athena.py",
+  },
 
   # list of tags definitions
   declare-tags: [
