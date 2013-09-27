@@ -150,7 +150,7 @@ Here is the complete syntax:
 
 package: {
   name: "control/pkg-app",
-  authors: ["my", "myself", "irene"],
+  authors: ["me", "myself", "irene"],
   managers: ["higher beeing"],
   version: "pkg-app-00-00-01",
   
